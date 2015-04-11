@@ -6,7 +6,11 @@ case "$(uname -s)" in
   OpenBSD) GOOS=openbsd ;;
   Linux) GOOS=linux ;;
   CYGWIN*|MINGW32*|MSYS*) GOOS=windows ;;
-  *) echo "error: unknown operating system" && exit 1 ;;
+  *)
+    echo "error: unknown arch"
+    echo "please add it to: https://github.com/jbenet/go-env-sh"
+    exit 1
+    ;;
 esac
 
 case $(uname -m) in
@@ -14,8 +18,11 @@ case $(uname -m) in
   x86_64) GOARCH=amd64 ;;
   i686) GOARCH=386 ;;
   i686) GOARCH=386 ;;
-  arm)  GOARCH=arm ;;
-  *) echo "error: unknown arch" && exit 1 ;;
+  *)
+    echo "error: unknown arch"
+    echo "please add it to: https://github.com/jbenet/go-env-sh"
+    exit 1
+    ;;
 esac
 
 echo "GOOS=$GOOS"
