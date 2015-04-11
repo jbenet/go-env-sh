@@ -8,3 +8,8 @@ why? because I need to write tools that install go probuilt binaries for the rig
 ```
 ./ipfs-install.sh
 ```
+
+Usage:
+
+- `go-env` (will be) an env
+- `go-platform` will output `$GOOS-$GOARCH`
